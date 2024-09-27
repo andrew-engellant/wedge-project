@@ -5,7 +5,6 @@
 import numpy as np
 import pandas as pd
 from google.cloud import bigquery
-import sqlite3
 
 # Connect to GoogleBQ
 client = bigquery.Client(project="umt-msba")

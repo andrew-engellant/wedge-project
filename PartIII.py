@@ -9,7 +9,7 @@ import sqlite3
 client = bigquery.Client(project="umt-msba")
 
 # Query 1 - 
-# Sales by day by hour
+# Sales by date by hour
 query_1 = '''
     SELECT 
     EXTRACT(DATE FROM datetime) AS date
