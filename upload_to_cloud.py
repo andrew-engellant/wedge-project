@@ -12,3 +12,4 @@ for file in os.listdir(dir):
 df = pd.read_csv(dir + file) # Load file to df
 df = df.replace(['\\N', r'\N'], 'NULL') # replace 
 # Clean the data
+

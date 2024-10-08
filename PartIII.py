@@ -33,6 +33,7 @@ query_1 = '''
     
 # Query 2 - 
 # Sales by owner by month by year. columns: card_no, year, month, sales, transactions, and items.
+# TODO: Check if card_no 3 needs to be removed
 query_2 = '''
     SELECT 
     card_no AS card_no
@@ -52,7 +53,7 @@ query_2 = '''
     WHERE department NOT IN (0, 15)
     AND (trans_status IS NULL
     OR trans_status IN (" ", "", "V", "R")) 
-    AND card_no != 3
+    AND card_no != 3 
     GROUP BY year, month, card_no
     ORDER BY year ASC, month ASC;'''
 
