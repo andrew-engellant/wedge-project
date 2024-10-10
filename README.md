@@ -1,4 +1,4 @@
 # Wedge Project
 
-TK - Some descriptive words of what I'm going to do.
+TODO: insert submission.md into this markdown document
 
