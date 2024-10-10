@@ -33,7 +33,6 @@ query_1 = '''
     
 # Query 2 - 
 # Sales by owner by month by year. columns: card_no, year, month, sales, transactions, and items.
-# TODO: Check if card_no 3 needs to be removed
 query_2 = '''
     SELECT 
     card_no AS card_no
@@ -124,9 +123,6 @@ sales_by_owner_by_month_by_year = results2.to_dataframe()
 query_job3 = client.query(query_3)
 results3 = query_job3.result()
 sales_by_product_desc_by_year_by_month = results3.to_dataframe()
-
-
-
 
 
 ###### THIS NEXT SECTION BUILDS THE SQLITE DATABASE ######

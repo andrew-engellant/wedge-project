@@ -7,12 +7,12 @@ import pandas as pd
 from google.cloud import bigquery
 
 # Connect to GoogleBQ
-client = bigquery.Client(project="umt-msba")
+client = bigquery.Client(project="engellantwedge2024")
 
 # Gather a list of all owners
 owners_query = '''
     SELECT DISTINCT(card_no) AS dist_card_no
-    FROM `umt-msba.transactions.transArchive_*`
+    FROM `engellantwedge2024.transactions.transArchive_*`
     WHERE card_no != 3
 '''
 
@@ -36,7 +36,7 @@ owners_tuple_str = ', '.join([str(owner) for owner in owners_sample])
 
 sample_query = f'''
     SELECT *
-    FROM `umt-msba.transactions.transArchive_*`
+    FROM `engellantwedge2024.transactions.transArchive_*`
     WHERE card_no IN ({owners_tuple_str})
 '''
 
