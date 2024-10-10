@@ -163,6 +163,4 @@ for file in os.listdir(ddir):
             print(f"Error uploading {file} to BigQuery: {e}")
             continue
 
-# See unique values in memType
-
 
