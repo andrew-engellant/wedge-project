@@ -39,7 +39,7 @@ The following table summarizes the query results from the Google BigQuery datase
 | Num Rows in Month with Fewest | 6,556,770 | 6,556,770 | 0 | 0% |
 | Month with Most | 5 | 5 | Yes | NA |
 | Num Rows in Month with Most | 7,578,372 | 7,578,372 | 0 | 0% |
-| Null_TS | | 7,123,792 | | |
+| Null_TS |  | 7,123,792 | | |
 | Null_DT | | 0 | | |
 | Null_Local | | 234,843 | | |
 | Null_CN | | 0 | | |
