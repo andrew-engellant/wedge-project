@@ -96,7 +96,57 @@ for table in tables:
     except Exception as e:
         print(f"Error querying table {table_name}: {e}")
         
-# 
+
 
 # Close the BigQuery client (optional, as it will close on script exit)
 client.close()
+
+
+#######################################
+#######################################
+#######################################
+
+from google.cloud import bigquery
+import re
+
+# Initialize the BigQuery client
+client = bigquery.Client()
+
+# Set the project and dataset
+project_id = "engellantwedge2024"
+dataset_id = "wedge_transactions"
+
+# Get the list of tables in the dataset
+dataset_ref = client.dataset(dataset_id, project=project_id)
+tables = list(client.list_tables(dataset_ref))
+
+# Regular expression pattern to match tables starting with "transArchive_"
+pattern = re.compile(r'^transArchive_')
+
+# Iterate through the tables
+for table in tables:
+    table_id = table.table_id
+
+    # Check if the table name starts with "transArchive_"
+    if pattern.match(table_id):
+        # Get the table schema
+        table_ref = dataset_ref.table(table_id)
+        table = client.get_table(table_ref)
+
+        # Find the 'local' column and print its data type
+        for field in table.schema:
+            if field.name == 'local':
+                print(f"Table: {table_id}, Column 'local' data type: {field.field_type}")
+                break
+        else:
+            print(f"Table: {table_id}, Column 'local' not found")
+    else:
+        print(f"Skipping table: {table_id} (does not match 'transArchive_' pattern)")
+
+# Print a summary
+print(f"\nTotal tables processed: {len(tables)}")
+print(f"Tables starting with 'transArchive_': {sum(1 for table in tables if pattern.match(table.table_id))}")
+
+#######################################
+#######################################
+#######################################
