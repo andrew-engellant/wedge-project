@@ -6,7 +6,7 @@ import pandas_gbq
 import numpy as np
 
 
-ddir = '/Users/drewengellant/Documents/MSBA/Fall24/ADA/wedge/wedge-project/data/WedgeZipOfZips/extracted/' #Path to small extracted tables
+ddir = '/Users/drewengellant/Documents/MSBA/Fall24/ADA/wedge/wedge-project/data/WedgeZipOfZips/extracted/' #Path to extracted tables
 
 schema = [
     bigquery.SchemaField("datetime", "TIMESTAMP", mode="NULLABLE"),

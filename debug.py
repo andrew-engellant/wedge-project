@@ -146,7 +146,3 @@ for table in tables:
 # Print a summary
 print(f"\nTotal tables processed: {len(tables)}")
 print(f"Tables starting with 'transArchive_': {sum(1 for table in tables if pattern.match(table.table_id))}")
-
-#######################################
-#######################################
-#######################################

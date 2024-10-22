@@ -1,7 +1,6 @@
 # This script connects to GoogleBigQuery and then builds several summary tables 
 # that will be useful for the analysis of the Wedge project.
 
-import pandas as pd
 from google.cloud import bigquery
 import sqlite3
 
